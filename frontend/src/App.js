@@ -1,11 +1,15 @@
 // import data from "./data";
+import { Suspense } from 'react';
+import React from 'react';
 import { BrowserRouter,Link, Route, Routes } from 'react-router-dom'
-import HomeScreen from './screens/HomeScreen';
-import ProductScreen from './screens/ProductScreen';
+// import ProductScreen from './screens/ProductScreen';
+const ProductScreen = React.lazy(()  => import('./screens/ProductScreen'))
+const HomeScreen = React.lazy(() => import('./screens/HomeScreen'));
 
 function App() {
   return (
     <>
+    <Suspense fallback={<div><b>Loading...</b></div>}>
     <BrowserRouter>
     <div>
       <header>
@@ -20,6 +24,7 @@ function App() {
       </main>
     </div>
     </BrowserRouter>
+    </Suspense>
     </>
   );
 }
