@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer } from "react";
 
 const reducer = (state, action) => {
   switch(action.type){
@@ -16,7 +16,7 @@ const reducer = (state, action) => {
 };
 export default function HomeScreen() {
   // const [products, setProducts] = useState([]);
-  const [{loading, error, products}, dispatch] = useReducer({products: [], loading: true, error: '',});
+  const [{loading, error, products}, dispatch] = useReducer(reducer, {products: [], loading: true, error: '',});
 
   useEffect(() => {
     const fetchData = async() =>{
