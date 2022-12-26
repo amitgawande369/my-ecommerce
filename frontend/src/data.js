@@ -1,10 +1,10 @@
 const data = {
-      products: [
+  products: [
     {
-      name: 'shirt 1',
-      slug: 'shirt 1',
+      name: 'Nike Slim shirt',
+      slug: 'nike-slim-shirt',
       category: 'Shirts',
-      image: '/images/image1.jpg', // 679px × 829px
+      image: '/images/p1.jpg', // 679px × 829px
       price: 120,
       countInStock: 10,
       brand: 'Nike',
@@ -13,10 +13,10 @@ const data = {
       description: 'high quality shirt',
     },
     {
-      name: 'Shirt 2',
-      slug: 'shirt 2',
+      name: 'Adidas Fit Shirt',
+      slug: 'adidas-fit-shirt',
       category: 'Shirts',
-      image: '/images/image2.jpg',
+      image: '/images/p2.jpg',
       price: 250,
       countInStock: 20,
       brand: 'Adidas',
@@ -25,10 +25,10 @@ const data = {
       description: 'high quality product',
     },
     {
-      name: 'shirt 3',
-      slug: 'shirt 3',
+      name: 'Nike Slim Pant',
+      slug: 'nike-slim-pant',
       category: 'Pants',
-      image: '/images/image3.jpg',
+      image: '/images/p3.jpg',
       price: 25,
       countInStock: 15,
       brand: 'Nike',
@@ -37,10 +37,10 @@ const data = {
       description: 'high quality product',
     },
     {
-      name: 'Pant 4',
-      slug: 'pant 4',
+      name: 'Adidas Fit Pant',
+      slug: 'adidas-fit-pant',
       category: 'Pants',
-      image: '/images/image4.jpg',
+      image: '/images/p4.jpg',
       price: 65,
       countInStock: 5,
       brand: 'Puma',
@@ -48,18 +48,6 @@ const data = {
       numReviews: 10,
       description: 'high quality product',
     },
-    {
-        name: 'Pant 5',
-        slug: 'pant 5',
-        category: 'Pants',
-        image: '/images/image5.jpg',
-        price: 65,
-        countInStock: 5,
-        brand: 'Puma',
-        rating: 4.5,
-        numReviews: 10,
-        description: 'high quality product',
-      }  
-],
+  ],
 };
 export default data;
