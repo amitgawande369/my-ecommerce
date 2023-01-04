@@ -3,9 +3,9 @@ import axios from "axios";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Product from "../components/Product";
-import { Helmet } from "react-helmet-async";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
+import useDocumentTitle from "../components/useDocumentTitle";
 // import data from '../data';
 
 const reducer = (state, action) => {
@@ -44,9 +44,7 @@ function HomeScreen() {
   }, []);
   return (
     <div>
-      <Helmet>
-        <title>Amazon</title>
-      </Helmet>
+      {useDocumentTitle('Amazon')}
       <h1>Featured Products</h1>
       <div className="products">
         {loading ? (

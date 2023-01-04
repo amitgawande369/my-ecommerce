@@ -3,13 +3,13 @@ import React, { useContext, useEffect, useReducer, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import { Helmet } from 'react-helmet-async';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
+import useDocumentTitle from '../components/useDocumentTitle';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -91,9 +91,7 @@ export default function UserEditScreen() {
   };
   return (
     <Container className="small-container">
-      <Helmet>
-        <title>Edit User ${userId}</title>
-      </Helmet>
+     {useDocumentTitle(`Edit User ${userId}`)}
       <h1>Edit User {userId}</h1>
 
       {loading ? (

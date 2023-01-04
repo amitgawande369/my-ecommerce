@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { Store } from '../Store';
-import { Helmet } from 'react-helmet-async';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import MessageBox from '../components/MessageBox';
@@ -9,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import useDocumentTitle from '../components/useDocumentTitle';
 
 export default function CartScreen() {
   const navigate = useNavigate();
@@ -38,9 +38,7 @@ export default function CartScreen() {
 
   return (
     <div>
-      <Helmet>
-        <title>Shopping Cart</title>
-      </Helmet>
+      {useDocumentTitle('Shopping Cart')}
       <h1>Shopping Cart</h1>
       <Row>
         <Col md={8}>

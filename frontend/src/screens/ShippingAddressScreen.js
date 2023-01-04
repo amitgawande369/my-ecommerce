@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { Store } from '../Store';
 import CheckoutSteps from '../components/CheckoutSteps';
+import useDocumentTitle from '../components/useDocumentTitle';
 
 export default function ShippingAddressScreen() {
   const navigate = useNavigate();
@@ -59,10 +59,7 @@ export default function ShippingAddressScreen() {
 
   return (
     <div>
-      <Helmet>
-        <title>Shipping Address</title>
-      </Helmet>
-
+      {useDocumentTitle('Shipping Address')}
       <CheckoutSteps step1 step2></CheckoutSteps>
       <div className="container small-container">
         <h1 className="my-3">Shipping Address</h1>

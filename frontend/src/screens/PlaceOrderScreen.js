@@ -1,6 +1,5 @@
 import Axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -12,6 +11,7 @@ import { getError } from '../utils';
 import { Store } from '../Store';
 import CheckoutSteps from '../components/CheckoutSteps';
 import LoadingBox from '../components/LoadingBox';
+import useDocumentTitle from '../components/useDocumentTitle';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -84,9 +84,7 @@ export default function PlaceOrderScreen() {
   return (
     <div>
       <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
-      <Helmet>
-        <title>Preview Order</title>
-      </Helmet>
+      {useDocumentTitle('Preview Order')}
       <h1 className="my-3">Preview Order</h1>
       <Row>
         <Col md={8}>

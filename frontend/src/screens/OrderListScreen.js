@@ -2,12 +2,12 @@ import axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
 import { toast } from 'react-toastify';
 import Button from 'react-bootstrap/Button';
-import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
+import useDocumentTitle from '../components/useDocumentTitle';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -89,9 +89,7 @@ export default function OrderListScreen() {
 
   return (
     <div>
-      <Helmet>
-        <title>Orders</title>
-      </Helmet>
+      {useDocumentTitle('Orders')}
       <h1>Orders</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {loading ? (

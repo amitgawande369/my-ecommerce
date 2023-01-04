@@ -3,11 +3,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Helmet } from 'react-helmet-async';
 import { useContext, useEffect, useState } from 'react';
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
+import useDocumentTitle from '../components/useDocumentTitle';
 
 export default function SignupScreen() {
   const navigate = useNavigate();
@@ -50,9 +50,7 @@ export default function SignupScreen() {
 
   return (
     <Container className="small-container">
-      <Helmet>
-        <title>Sign Up</title>
-      </Helmet>
+      {useDocumentTitle('Sign Up')}
       <h1 className="my-3">Sign Up</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="name">

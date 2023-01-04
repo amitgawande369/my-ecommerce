@@ -1,11 +1,11 @@
 import React, { useContext, useReducer, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
 import axios from 'axios';
+import useDocumentTitle from '../components/useDocumentTitle';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -63,9 +63,7 @@ export default function ProfileScreen() {
 
   return (
     <div className="container small-container">
-      <Helmet>
-        <title>User Profile</title>
-      </Helmet>
+      {useDocumentTitle('User Profile')}
       <h1 className="my-3">User Profile</h1>
       <form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="name">

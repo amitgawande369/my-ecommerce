@@ -7,10 +7,10 @@ import { getError } from '../utils';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Form from 'react-bootstrap/Form';
-import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Button from 'react-bootstrap/Button';
+import useDocumentTitle from '../components/useDocumentTitle';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -155,9 +155,7 @@ export default function ProductEditScreen() {
   };
   return (
     <Container className="small-container">
-      <Helmet>
-        <title>Edit Product ${productId}</title>
-      </Helmet>
+      {useDocumentTitle(`Edit Product ${productId}`)}
       <h1>Edit Product {productId}</h1>
 
       {loading ? (

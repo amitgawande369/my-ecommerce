@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
 import Button from 'react-bootstrap/Button';
-import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import useDocumentTitle from '../components/useDocumentTitle';
 import { Store } from '../Store';
 import { getError } from '../utils';
 
@@ -89,9 +89,7 @@ export default function UserListScreen() {
   };
   return (
     <div>
-      <Helmet>
-        <title>Users</title>
-      </Helmet>
+     {useDocumentTitle('Users')}
       <h1>Users</h1>
 
       {loadingDelete && <LoadingBox></LoadingBox>}

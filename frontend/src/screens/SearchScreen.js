@@ -3,7 +3,6 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
-import { Helmet } from 'react-helmet-async';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Rating from '../components/Rating';
@@ -12,6 +11,7 @@ import MessageBox from '../components/MessageBox';
 import Button from 'react-bootstrap/Button';
 import Product from '../components/Product';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
+import useDocumentTitle from '../components/useDocumentTitle';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -129,9 +129,7 @@ export default function SearchScreen() {
   };
   return (
     <div>
-      <Helmet>
-        <title>Search Products</title>
-      </Helmet>
+      {useDocumentTitle('Search Products')}
       <Row>
         <Col md={3}>
           <h3>Department</h3>
