@@ -87,7 +87,6 @@ function App() {
               >
                 <i className="fas fa-bars"></i>
               </Button>
-
               <LinkContainer to="/">
                 <Navbar.Brand>Amazon</Navbar.Brand>
               </LinkContainer>

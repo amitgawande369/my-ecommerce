@@ -15,7 +15,7 @@ import { getError } from '../utils';
 import { Store } from '../Store';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { toast } from 'react-toastify';
-import useDocumentTitle from '../components/useDocumentTitle';
+// import useDocumentTitle from '../components/useDocumentTitle';
 
 const reducer = (state, action) => {
   switch (action.type) {

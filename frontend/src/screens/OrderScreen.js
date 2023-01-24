@@ -13,7 +13,7 @@ import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
 import { toast } from 'react-toastify';
-import useDocumentTitle from '../components/useDocumentTitle';
+// import useDocumentTitle from '../components/useDocumentTitle';
 
 function reducer(state, action) {
   switch (action.type) {
